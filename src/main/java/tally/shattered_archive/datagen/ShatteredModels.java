@@ -3,12 +3,15 @@ package tally.shattered_archive.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import tally.shattered_archive.ShatteredArchive;
 import tally.shattered_archive.blocks.ShatteredBlocks;
+import tally.shattered_archive.blocks.helpers.ModBlockProperties;
 import tally.shattered_archive.items.ShatteredItems;
 
 import java.util.Optional;
@@ -58,6 +61,24 @@ public class ShatteredModels extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleState(ShatteredBlocks.GLOWING_ENCHANTED_WILLOW_LEAVES);
         blockStateModelGenerator.registerSimpleState(ShatteredBlocks.GLOWING_BLUE_ENCHANTED_WILLOW_LEAVES);
 
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.ARCTICITE_GLASS, "base");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.RED_STAINED_ARCTICITE_GLASS, "red");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.ORANGE_STAINED_ARCTICITE_GLASS, "orange");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.YELLOW_STAINED_ARCTICITE_GLASS, "yellow");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.LIME_STAINED_ARCTICITE_GLASS, "lime");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.GREEN_STAINED_ARCTICITE_GLASS, "green");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.CYAN_STAINED_ARCTICITE_GLASS, "cyan");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.LIGHT_BLUE_STAINED_ARCTICITE_GLASS, "light_blue");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.BLUE_STAINED_ARCTICITE_GLASS, "blue");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.PURPLE_STAINED_ARCTICITE_GLASS, "purple");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.MAGENTA_STAINED_ARCTICITE_GLASS, "magenta");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.PINK_STAINED_ARCTICITE_GLASS, "pink");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.WHITE_STAINED_ARCTICITE_GLASS, "white");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.LIGHT_GRAY_STAINED_ARCTICITE_GLASS, "light_gray");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.GRAY_STAINED_ARCTICITE_GLASS, "gray");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.BLACK_STAINED_ARCTICITE_GLASS, "black");
+        registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.BROWN_STAINED_ARCTICITE_GLASS, "brown");
+
         blockStateModelGenerator.registerSimpleCubeAll(ShatteredBlocks.RED_HALLOW_LEAVES);
         blockStateModelGenerator.registerSimpleCubeAll(ShatteredBlocks.ORANGE_HALLOW_LEAVES);
         blockStateModelGenerator.registerSimpleCubeAll(ShatteredBlocks.YELLOW_HALLOW_LEAVES);
@@ -78,6 +99,16 @@ public class ShatteredModels extends FabricModelProvider {
         registerDroopingLeaves(blockStateModelGenerator, ShatteredBlocks.ENCHANTED_WILLOW_DROOPING_LEAVES);
         registerDroopingLeaves(blockStateModelGenerator, ShatteredBlocks.BLUE_ENCHANTED_WILLOW_DROOPING_LEAVES);
         registerSnows(blockStateModelGenerator);
+    }
+
+    public static void registerArcticGlass(BlockStateModelGenerator blockStateModelGenerator, Block block, String base) {
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(BlockStateVariantMap.create(ModBlockProperties.OPAQUE).register(opaque -> {
+            String string = "shatteredarchive:block/arctic/" + base + "_" + opaque;
+            String stringb = "_" + opaque;
+            Identifier identifier = Identifier.of(string);
+            return BlockStateVariant.create().put(VariantSettings.MODEL, Models.CUBE_ALL.upload(block, stringb, new TextureMap().put(TextureKey.ALL, identifier), blockStateModelGenerator.modelCollector));
+        })));
+        blockStateModelGenerator.registerParentedItemModel(block, TextureMap.getSubId(block, "_0"));
     }
 
     private static Model block(String parent, TextureKey... requiredTextureKeys) {

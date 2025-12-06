@@ -2,10 +2,12 @@ package tally.shattered_archive.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.advancement.AdvancementCriterion;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.RecipeProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -62,6 +64,23 @@ public class ShatteredRecipeGen extends FabricRecipeProvider {
         offerDroopingLeavesRecipe(recipeExporter, ShatteredBlocks.BLUE_ENCHANTED_WILLOW_DROOPING_LEAVES, ShatteredBlocks.BLUE_ENCHANTED_WILLOW_LEAVES);
         offerDroopingLeavesRecipe(recipeExporter, ShatteredBlocks.ENCHANTED_WILLOW_DROOPING_LEAVES, ShatteredBlocks.ENCHANTED_WILLOW_LEAVES);
 
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.RED_STAINED_ARCTICITE_GLASS.asItem(), Items.RED_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.ORANGE_STAINED_ARCTICITE_GLASS.asItem(), Items.ORANGE_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.YELLOW_STAINED_ARCTICITE_GLASS.asItem(), Items.YELLOW_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.LIME_STAINED_ARCTICITE_GLASS.asItem(), Items.LIME_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.GREEN_STAINED_ARCTICITE_GLASS.asItem(), Items.GREEN_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.CYAN_STAINED_ARCTICITE_GLASS.asItem(), Items.CYAN_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.LIGHT_BLUE_STAINED_ARCTICITE_GLASS.asItem(), Items.LIGHT_BLUE_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.BLUE_STAINED_ARCTICITE_GLASS.asItem(), Items.BLUE_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.PURPLE_STAINED_ARCTICITE_GLASS.asItem(), Items.PURPLE_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.MAGENTA_STAINED_ARCTICITE_GLASS.asItem(), Items.MAGENTA_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.PINK_STAINED_ARCTICITE_GLASS.asItem(), Items.PINK_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.BLACK_STAINED_ARCTICITE_GLASS.asItem(), Items.BLACK_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.GRAY_STAINED_ARCTICITE_GLASS.asItem(), Items.GRAY_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.LIGHT_GRAY_STAINED_ARCTICITE_GLASS.asItem(), Items.LIGHT_GRAY_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.WHITE_STAINED_ARCTICITE_GLASS.asItem(), Items.WHITE_DYE);
+        offerStainedArcticiteDyeingRecipe(recipeExporter, ShatteredBlocks.BROWN_STAINED_ARCTICITE_GLASS.asItem(), Items.BROWN_DYE);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ShatteredBlocks.SMOKE_STACK, 1)
                 .input('#', Blocks.BASALT)
                 .input('X', Ingredient.ofItems(Items.COAL, Items.CHARCOAL))
@@ -69,6 +88,10 @@ public class ShatteredRecipeGen extends FabricRecipeProvider {
                 .pattern("#")
                 .criterion("has_basalt", conditionsFromItem(Blocks.BASALT))
                 .offerTo(recipeExporter);
+    }
+
+    public static void offerStainedArcticiteDyeingRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 8).input(Character.valueOf('#'), ShatteredItemTagGen.ARCTICITE_GLASS).input(Character.valueOf('X'), input).pattern("###").pattern("#X#").pattern("###").group("stained_arcticite_glass").criterion("has_arcticite", (AdvancementCriterion) RecipeProvider.conditionsFromItem(ShatteredBlocks.ARCTICITE_GLASS)).offerTo(exporter);
     }
 
     public static void offerDroopingLeavesRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {

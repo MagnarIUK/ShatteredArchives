@@ -20,11 +20,14 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ColorCode;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.world.BlockView;
 import tally.shattered_archive.ShatteredArchive;
 import tally.shattered_archive.blocks.custom.*;
+import tally.shattered_archive.blocks.helpers.ModBlockProperties;
 import tally.shattered_archive.world.ShatteredConfiguredFeatures;
 import tally.shattered_archive.world.ShatteredSaplingGenerators;
 
@@ -33,6 +36,10 @@ import java.util.Optional;
 import java.util.function.ToIntFunction;
 
 public class ShatteredBlocks {
+
+    public static boolean fullBlock(BlockState state, BlockView world, BlockPos pos) {
+        return state.get(ModBlockProperties.OPAQUE) == 15;
+    }
 
     public static final Block COCKATRICE_OF_THE_WOODS = registerNo(
             "cockatrice_of_the_woods",
@@ -98,8 +105,28 @@ public class ShatteredBlocks {
     //public static final Block AURORA_LOG = register("aurora_log", new GlassPillar((AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK).luminance((p_50886_) -> {
         //return 2;
     //}).nonOpaque().postProcess(ShatteredBlocks::always).emissiveLighting(ShatteredBlocks::always))));
-    
-    
+
+    public static final Block ARCTICITE_GLASS = register("arcticite_glass", new VariableGlass(AbstractBlock.Settings.create().instrument(NoteBlockInstrument.HAT).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(ShatteredBlocks::fullBlock)));
+    public static final Block RED_STAINED_ARCTICITE_GLASS = register("red_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.RED));
+    public static final Block ORANGE_STAINED_ARCTICITE_GLASS = register("orange_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.ORANGE));
+    public static final Block YELLOW_STAINED_ARCTICITE_GLASS = register("yellow_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.YELLOW));
+    public static final Block LIME_STAINED_ARCTICITE_GLASS = register("lime_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.LIME));
+    public static final Block GREEN_STAINED_ARCTICITE_GLASS = register("green_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.GREEN));
+    public static final Block CYAN_STAINED_ARCTICITE_GLASS = register("cyan_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.CYAN));
+    public static final Block LIGHT_BLUE_STAINED_ARCTICITE_GLASS = register("light_blue_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.LIGHT_BLUE));
+    public static final Block BLUE_STAINED_ARCTICITE_GLASS = register("blue_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.BLUE));
+    public static final Block PURPLE_STAINED_ARCTICITE_GLASS = register("purple_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.PURPLE));
+    public static final Block MAGENTA_STAINED_ARCTICITE_GLASS = register("magenta_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.MAGENTA));
+    public static final Block PINK_STAINED_ARCTICITE_GLASS = register("pink_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.PINK));
+    public static final Block WHITE_STAINED_ARCTICITE_GLASS = register("white_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.WHITE));
+    public static final Block LIGHT_GRAY_STAINED_ARCTICITE_GLASS = register("light_gray_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.LIGHT_GRAY));
+    public static final Block GRAY_STAINED_ARCTICITE_GLASS = register("gray_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.GRAY));
+    public static final Block BLACK_STAINED_ARCTICITE_GLASS = register("black_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.BLACK));
+    public static final Block BROWN_STAINED_ARCTICITE_GLASS = register("brown_stained_arcticite_glass", createStainedArcticiteBlock(DyeColor.BROWN));
+
+    private static Block createStainedArcticiteBlock(DyeColor color) {
+        return new VariableStainedGlass(color, AbstractBlock.Settings.create().mapColor(color).instrument(NoteBlockInstrument.HAT).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(ShatteredBlocks::fullBlock));
+    }
 
     public static final BlockSetType PEARLWOOD = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).build(Identifier.of(ShatteredArchive.MOD_ID, "pearlwood"));
     public static final WoodType PEARLWOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).build(Identifier.of(ShatteredArchive.MOD_ID, "pearlwood_type"), PEARLWOOD);

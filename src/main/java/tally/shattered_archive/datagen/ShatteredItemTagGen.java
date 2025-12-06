@@ -28,6 +28,7 @@ public class ShatteredItemTagGen extends FabricTagProvider<Item> {
     public static final TagKey<Item> GUARDIAN_DISCS = of("guardian_discs");
     public static final TagKey<Item> PEARLWOOD_LOGS  = of("pearlwood_logs");
     public static final TagKey<Item> ENCHANTED_WILLOW_LOGS  = of("enchanted_willow_logs");
+    public static final TagKey<Item> ARCTICITE_GLASS  = of("arcticite_glass");
 
     private static TagKey<Item> of(String id) {
         return TagKey.of(RegistryKeys.ITEM, Identifier.of(ShatteredArchive.MOD_ID, id));
@@ -42,6 +43,24 @@ public class ShatteredItemTagGen extends FabricTagProvider<Item> {
                 .add(ShatteredBlocks.MOONDROP_FLOWER.asItem())
                 .add(ShatteredBlocks.SPIDER_LILY.asItem())
                 .add(ShatteredBlocks.DWARF_LAVENDER.asItem());
+        getOrCreateTagBuilder(ARCTICITE_GLASS)
+                .add(ShatteredBlocks.ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.RED_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.ORANGE_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.YELLOW_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.LIME_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.GREEN_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.CYAN_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.LIGHT_BLUE_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.BLUE_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.PURPLE_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.MAGENTA_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.PINK_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.BLACK_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.GRAY_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.LIGHT_GRAY_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.WHITE_STAINED_ARCTICITE_GLASS.asItem())
+                .add(ShatteredBlocks.BROWN_STAINED_ARCTICITE_GLASS.asItem());
         getOrCreateTagBuilder(ItemTags.LEAVES)
                 .add(ShatteredBlocks.RED_HALLOW_LEAVES.asItem())
                 .add(ShatteredBlocks.ORANGE_HALLOW_LEAVES.asItem())

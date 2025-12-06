@@ -50,6 +50,9 @@ public class ShatteredBlockTagGen extends FabricTagProvider<Block> {
                 .add(ShatteredBlocks.GLOWING_ENCHANTED_WILLOW_LEAVES)
                 .add(ShatteredBlocks.GLOWING_BLUE_ENCHANTED_WILLOW_LEAVES);
 
+        getOrCreateTagBuilder(BlockTags.ICE)
+                .add(ShatteredBlocks.BLOOD_ICE);
+
         getOrCreateTagBuilder(BlockTags.SAND)
                 .add(ShatteredBlocks.INK_SAND);
 

@@ -12,8 +12,11 @@ import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.color.world.BiomeColors;
+import net.minecraft.client.gl.ShaderProgram;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.VertexFormat;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleEffect;
@@ -25,12 +28,14 @@ import net.minecraft.world.biome.GrassColors;
 import org.jetbrains.annotations.Nullable;
 import tally.shattered_archive.blocks.ShatteredBlocks;
 import tally.shattered_archive.blocks.ShatteredBoat;
+import tally.shattered_archive.blocks.custom.ShatteredBlockEntities;
 import tally.shattered_archive.particles.ShatteredParticles;
 import tally.shattered_archive.particles.custom.SmokeParticle;
 import tally.shattered_archive.particles.custom.SmokeParticleType;
 import tally.shattered_archive.particles.custom.WillowParticle;
 
 public class ShatteredArchiveClient implements ClientModInitializer {
+
     public static final Vec3i[] SOARE_COLORS;
     public static final Vec3i[] SOL_COLORS;
     public static final Vec3i[] LUNA_COLORS;
@@ -81,6 +86,25 @@ public class ShatteredArchiveClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.SOARE_AURORA_BLOCK, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.LUNA_AURORA_BLOCK, RenderLayer.getTranslucent());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.RED_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.WHITE_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.GRAY_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.LIGHT_GRAY_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.BLACK_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.BROWN_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.ORANGE_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.YELLOW_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.LIME_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.GREEN_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.CYAN_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.BLUE_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.LIGHT_BLUE_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.PURPLE_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.MAGENTA_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.PINK_STAINED_ARCTICITE_GLASS, RenderLayer.getTranslucent());
 
         BlockRenderLayerMap.INSTANCE.putBlock(ShatteredBlocks.BLOOD_ICE, RenderLayer.getTranslucent());
 

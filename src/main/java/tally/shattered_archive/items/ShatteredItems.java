@@ -242,6 +242,23 @@ public class ShatteredItems {
             itemGroup.add(ShatteredBlocks.BLUE_ENCHANTED_WILLOW_LEAVES);
             itemGroup.add(ShatteredBlocks.BLUE_ENCHANTED_WILLOW_DROOPING_LEAVES);
             itemGroup.add(ShatteredBlocks.ENCHANTED_WILLOW_SAPLING);
+            itemGroup.add(ShatteredBlocks.ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.RED_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.ORANGE_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.YELLOW_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.LIME_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.GREEN_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.CYAN_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.LIGHT_BLUE_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.BLUE_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.PURPLE_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.MAGENTA_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.PINK_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.WHITE_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.LIGHT_GRAY_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.GRAY_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.BLACK_STAINED_ARCTICITE_GLASS);
+            itemGroup.add(ShatteredBlocks.BROWN_STAINED_ARCTICITE_GLASS);
         });
     }
 }

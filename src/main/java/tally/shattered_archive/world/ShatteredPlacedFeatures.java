@@ -46,7 +46,7 @@ public class ShatteredPlacedFeatures {
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
-        register(context, SPIDER_LILLIES, configuredFeatures.getOrThrow(ShatteredConfiguredFeatures.SPIDER_LILLIES), RarityFilterPlacementModifier.of(32), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+        register(context, SPIDER_LILLIES, configuredFeatures.getOrThrow(ShatteredConfiguredFeatures.SPIDER_LILLIES), RarityFilterPlacementModifier.of(6), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
         register(context, BLOOD_FREEZE, configuredFeatures.getOrThrow(ShatteredConfiguredFeatures.BLOOD_FREEZE),
                 BiomePlacementModifier.of());
