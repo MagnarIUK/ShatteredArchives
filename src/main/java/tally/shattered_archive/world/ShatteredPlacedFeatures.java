@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.util.math.intprovider.WeightedListIntProvider;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
@@ -29,6 +30,7 @@ public class ShatteredPlacedFeatures {
     public static final RegistryKey<PlacedFeature> WILLOW_TREE = registerKey("willow_tree");
     public static final RegistryKey<PlacedFeature> FROZEN_LAVA = registerKey("frozen_lava");
     public static final RegistryKey<PlacedFeature> ICE_SPIKE_EVERYWHERE = registerKey("ice_spike_everywhere");
+    public static final RegistryKey<PlacedFeature> ARCTICITE_COLUMNS = registerKey("arcticite_columns");
     public static final RegistryKey<PlacedFeature> GLOW_CRYSTAL = registerKey("glow_crystal_placed");
     public static final RegistryKey<PlacedFeature> HOLLOW_TREE = registerKey("hollow_tree_placed");
     public static final RegistryKey<PlacedFeature> BLOOD_FREEZE = registerKey("blood_freeze");
@@ -49,6 +51,16 @@ public class ShatteredPlacedFeatures {
         register(context, SPIDER_LILLIES, configuredFeatures.getOrThrow(ShatteredConfiguredFeatures.SPIDER_LILLIES), RarityFilterPlacementModifier.of(6), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
         register(context, BLOOD_FREEZE, configuredFeatures.getOrThrow(ShatteredConfiguredFeatures.BLOOD_FREEZE),
+                BiomePlacementModifier.of());
+
+        register(context, ARCTICITE_COLUMNS, configuredFeatures.getOrThrow(ShatteredConfiguredFeatures.ARCTICITE_CRYSTAL),
+                CountPlacementModifier.of(15),
+                SquarePlacementModifier.of(),
+                HeightRangePlacementModifier.uniform(
+                        YOffset.aboveBottom(0),
+                        YOffset.fixed(127)
+                ),
+                RarityFilterPlacementModifier.of(4),
                 BiomePlacementModifier.of());
 
         register(context, HOLLOW_TREE, configuredFeatures.getOrThrow(ShatteredConfiguredFeatures.HOLLOW_TREE_NAT),

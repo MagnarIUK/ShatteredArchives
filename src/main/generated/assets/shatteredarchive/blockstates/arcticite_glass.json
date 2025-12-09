@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "opaque=0": {
+      "model": "shatteredarchive:block/arcticite_glass_0"
+    },
+    "opaque=1": {
+      "model": "shatteredarchive:block/arcticite_glass_1"
+    },
+    "opaque=10": {
+      "model": "shatteredarchive:block/arcticite_glass_10"
+    },
+    "opaque=11": {
+      "model": "shatteredarchive:block/arcticite_glass_11"
+    },
+    "opaque=12": {
+      "model": "shatteredarchive:block/arcticite_glass_12"
+    },
+    "opaque=13": {
+      "model": "shatteredarchive:block/arcticite_glass_13"
+    },
+    "opaque=14": {
+      "model": "shatteredarchive:block/arcticite_glass_14"
+    },
+    "opaque=15": {
+      "model": "shatteredarchive:block/arcticite_glass_15"
+    },
+    "opaque=2": {
+      "model": "shatteredarchive:block/arcticite_glass_2"
+    },
+    "opaque=3": {
+      "model": "shatteredarchive:block/arcticite_glass_3"
+    },
+    "opaque=4": {
+      "model": "shatteredarchive:block/arcticite_glass_4"
+    },
+    "opaque=5": {
+      "model": "shatteredarchive:block/arcticite_glass_5"
+    },
+    "opaque=6": {
+      "model": "shatteredarchive:block/arcticite_glass_6"
+    },
+    "opaque=7": {
+      "model": "shatteredarchive:block/arcticite_glass_7"
+    },
+    "opaque=8": {
+      "model": "shatteredarchive:block/arcticite_glass_8"
+    },
+    "opaque=9": {
+      "model": "shatteredarchive:block/arcticite_glass_9"
+    }
+  }
+}

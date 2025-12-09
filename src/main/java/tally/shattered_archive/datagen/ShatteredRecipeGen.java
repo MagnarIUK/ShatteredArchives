@@ -88,6 +88,8 @@ public class ShatteredRecipeGen extends FabricRecipeProvider {
                 .pattern("#")
                 .criterion("has_basalt", conditionsFromItem(Blocks.BASALT))
                 .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ShatteredBlocks.ARCTICITE_GLASS, 8).input(Character.valueOf('#'), Blocks.BLUE_ICE).input(Character.valueOf('X'), Blocks.GLASS).pattern("###").pattern("#X#").pattern("###").group("arcticite_glass").criterion("has_blue_ice", (AdvancementCriterion) RecipeProvider.conditionsFromItem(Blocks.BLUE_ICE)).offerTo(recipeExporter);
     }
 
     public static void offerStainedArcticiteDyeingRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {

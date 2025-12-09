@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-05T18:14:37.8899998	ShatteredArchive/Tags for minecraft:block
+// 1.21.1	2025-12-09T15:57:18.6907867	ShatteredArchive/Tags for minecraft:block
 93b2462aa992b5f9cc369ca40130a846199171c5 data\minecraft\tags\block\logs.json
 731ff13a6d5ae77e868d040992f7aa28be1e8033 data\minecraft\tags\block\flower_pots.json
 6eca348bb6e6ea7b820cceddeba1ce2b4c8b0dd8 data\minecraft\tags\block\wooden_slabs.json
@@ -6,8 +6,8 @@
 9855dabd13faa642f2a2c3ae4cba11adf61415c0 data\minecraft\tags\block\replaceable.json
 2d5c901f9bfa7c536cf234753ffeb44149edda11 data\shatteredarchive\tags\block\hanging_willow.json
 a0e30e6300ef6c670fd5109ea910b476aa3ec527 data\minecraft\tags\block\sand.json
-8997083075478e4e633fe1d63860c8283ea0bdc2 data\minecraft\tags\block\wooden_trapdoors.json
 4dab43b936e40081c9e3b8965065edc6a59965b7 data\minecraft\tags\block\leaves.json
+8997083075478e4e633fe1d63860c8283ea0bdc2 data\minecraft\tags\block\wooden_trapdoors.json
 ee2157bc137952c82d5511704abec1ecdf81e2a1 data\minecraft\tags\block\planks.json
 2ff3b987bdb7dd3f977cf1553b3efecee864cbf6 data\minecraft\tags\block\wooden_stairs.json
 7ba05ac6792dc265ead92fe505506a390ba45127 data\minecraft\tags\block\wooden_buttons.json
@@ -27,3 +27,4 @@ ecce643896d518f15614894b67b01107be45b289 data\minecraft\tags\block\mineable\axe.
 bc57bc47afaa8ef3cf0db1e4666508f11a087851 data\minecraft\tags\block\mineable\pickaxe.json
 af73c70c8c9d01ddabccc68ad63798faec26b211 data\minecraft\tags\block\ice.json
 be94ef34e642ee1248ae1fd6dcebe12713e3c03a data\minecraft\tags\block\wooden_doors.json
+4888b302dce29754850e57464b4f5c3dd6d72102 data\minecraft\tags\block\dripstone_replaceable_blocks.json

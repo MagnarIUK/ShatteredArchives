@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stained_arcticite_glass",
+  "key": {
+    "#": {
+      "tag": "shatteredarchive:arcticite_glass"
+    },
+    "X": {
+      "item": "minecraft:orange_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "shatteredarchive:orange_stained_arcticite_glass"
+  }
+}

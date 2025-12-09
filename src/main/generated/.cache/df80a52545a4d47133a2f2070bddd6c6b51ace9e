@@ -1,9 +1,9 @@
-// 1.21.1	2025-12-05T18:14:37.899008	ShatteredArchive/Tags for minecraft:item
+// 1.21.1	2025-12-09T15:57:18.7027978	ShatteredArchive/Tags for minecraft:item
 22088eef1631025b43565d0c78421bc4f242c1e2 data\shatteredarchive\tags\item\pearlwood_logs.json
 8997083075478e4e633fe1d63860c8283ea0bdc2 data\minecraft\tags\item\wooden_trapdoors.json
 e38a4223d2e92c96d6ec60f59e4d48f2926fbde1 data\minecraft\tags\item\wooden_fences.json
-b3e948e72bdb9d6219eb75330d40397bcdd05702 data\minecraft\tags\item\fence_gates.json
 806dcdcf5f9323371dd4209d14ca1c4bbcd23782 data\shatteredarchive\tags\item\arcticite_glass.json
+b3e948e72bdb9d6219eb75330d40397bcdd05702 data\minecraft\tags\item\fence_gates.json
 be94ef34e642ee1248ae1fd6dcebe12713e3c03a data\minecraft\tags\item\wooden_doors.json
 e8d4367eb41586ab124c0c77852795295e7febdc data\shatteredarchive\tags\item\ink_sand.json
 04ee130c5d7ab123f6528b57cea168fc72a1cb65 data\shatteredarchive\tags\item\wither_discs.json

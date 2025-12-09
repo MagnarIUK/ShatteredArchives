@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "shatteredarchive:block/arctic/magenta_13"
+  }
+}

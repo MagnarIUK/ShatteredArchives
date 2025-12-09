@@ -12,6 +12,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3i;
+import net.minecraft.util.math.floatprovider.UniformFloatProvider;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
@@ -19,6 +20,7 @@ import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.SpruceFoliagePlacer;
+import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
 import net.minecraft.world.gen.stateprovider.*;
 import net.minecraft.world.gen.treedecorator.AttachedToLeavesTreeDecorator;
 import net.minecraft.world.gen.trunk.CherryTrunkPlacer;
@@ -47,6 +49,7 @@ public class ShatteredConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> MOONDROP = registerKey("moondrop");
     public static final RegistryKey<ConfiguredFeature<?, ?>> FROZEN_LAVA = registerKey("frozen_lava");
     public static final RegistryKey<ConfiguredFeature<?, ?>> GLOWING_CRYSTALS = registerKey("glowing_crystals");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ARCTICITE_CRYSTAL = registerKey("arcticite_crystal");
     public static final RegistryKey<ConfiguredFeature<?, ?>> HOLLOW_TREE = registerKey("hollow_yellow_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> HOLLOW_TREE_NAT = registerKey("hollow_nat_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SPIDER_LILLIES = registerKey("spider_lillies");
@@ -70,6 +73,18 @@ public class ShatteredConfiguredFeatures {
         register(context, SPIDER_LILLIES, Feature.FLOWER, new RandomPatchFeatureConfig(16, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ShatteredBlocks.SPIDER_LILY)))));
 
         register(context, BLOOD_FREEZE, ShatteredFeatures.BLOOD_FREEZE, new DefaultFeatureConfig());
+
+        register(context, ARCTICITE_CRYSTAL, ShatteredFeatures.ARCTICITE_COLUMN, new LargeDripstoneFeatureConfig(
+                100,
+                UniformIntProvider.create(3, 8),
+                UniformFloatProvider.create(1.35f, 4f),
+                1.0f,
+                UniformFloatProvider.create(0.2f, 1.5f),
+                UniformFloatProvider.create(0.2f, 1f),
+                UniformFloatProvider.create(0f, 0.3f),
+                0,
+                0
+        ));
 
         register(context, HOLLOW_TREE_NAT, Feature.SIMPLE_RANDOM_SELECTOR, new SimpleRandomFeatureConfig(
                         RegistryEntryList.of(

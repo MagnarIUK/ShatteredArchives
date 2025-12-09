@@ -21,7 +21,7 @@ import tally.shattered_archive.world.ShatteredFeatures;
 import tally.shattered_archive.world.ShatteredPlacedFeatures;
 
 public class FrostfellBiome {
-    public static final MultiNoiseUtil.NoiseHypercube NOISE_POINT = MultiNoiseUtil.createNoiseHypercube(-0.45F, -0.3F, 0.0F, 0.0F, 0.0F, 0.0F, 0.2F);
+    public static final MultiNoiseUtil.NoiseHypercube NOISE_POINT = MultiNoiseUtil.createNoiseHypercube(-0.45F, -0.3F, 0.0F, 0.0F, 0.0F, 0.0F, 0.4F);
 
     public static Biome create(Registerable<Biome> registerable) {
         return new Biome.Builder()
@@ -54,8 +54,11 @@ public class FrostfellBiome {
 
         builder.feature(GenerationStep.Feature.LAKES, ShatteredPlacedFeatures.FROZEN_LAVA);
 
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShatteredPlacedFeatures.ARCTICITE_COLUMNS);
+
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MiscPlacedFeatures.BLUE_ICE);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MiscPlacedFeatures.ICE_PATCH);
+
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MiscPlacedFeatures.ICEBERG_BLUE);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MiscPlacedFeatures.ICEBERG_PACKED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShatteredPlacedFeatures.ICE_SPIKE_EVERYWHERE);

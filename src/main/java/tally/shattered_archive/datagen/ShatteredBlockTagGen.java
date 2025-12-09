@@ -3,6 +3,7 @@ package tally.shattered_archive.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
@@ -52,6 +53,13 @@ public class ShatteredBlockTagGen extends FabricTagProvider<Block> {
 
         getOrCreateTagBuilder(BlockTags.ICE)
                 .add(ShatteredBlocks.BLOOD_ICE);
+
+        getOrCreateTagBuilder(BlockTags.DRIPSTONE_REPLACEABLE_BLOCKS)
+                .add(Blocks.ICE)
+                .add(Blocks.PACKED_ICE)
+                .add(Blocks.CALCITE)
+                .add(Blocks.SNOW_BLOCK)
+                .add(Blocks.BLUE_ICE);
 
         getOrCreateTagBuilder(BlockTags.SAND)
                 .add(ShatteredBlocks.INK_SAND);

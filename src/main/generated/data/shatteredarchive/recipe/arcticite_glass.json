@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "arcticite_glass",
+  "key": {
+    "#": {
+      "item": "minecraft:blue_ice"
+    },
+    "X": {
+      "item": "minecraft:glass"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "shatteredarchive:arcticite_glass"
+  }
+}

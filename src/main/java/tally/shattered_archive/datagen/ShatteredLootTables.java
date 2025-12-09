@@ -30,6 +30,24 @@ public class ShatteredLootTables extends FabricBlockLootTableProvider {
         addDrop(ShatteredBlocks.SOARE_AURORA_BLOCK);
         addDrop(ShatteredBlocks.LUNA_AURORA_BLOCK);
 
+        addDropWithSilkTouch(ShatteredBlocks.ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.RED_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.ORANGE_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.YELLOW_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.LIME_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.GREEN_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.CYAN_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.BLUE_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.LIGHT_BLUE_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.PURPLE_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.MAGENTA_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.PINK_HALLOW_LEAVES);
+        addDropWithSilkTouch(ShatteredBlocks.BLACK_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.GRAY_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.LIGHT_GRAY_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.WHITE_STAINED_ARCTICITE_GLASS);
+        addDropWithSilkTouch(ShatteredBlocks.BROWN_STAINED_ARCTICITE_GLASS);
+
         addDrop(ShatteredBlocks.SOL_AURORA_BLOCK);
         addDrop(ShatteredBlocks.SOL_AURORA_CLUSTER);
         addDrop(ShatteredBlocks.LARGE_SOL_AURORA_BUD);
