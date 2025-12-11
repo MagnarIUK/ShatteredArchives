@@ -3,24 +3,18 @@ package tally.shattered_archive.items;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.component.type.FoodComponent;
-import net.minecraft.component.type.FoodComponents;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import tally.shattered_archive.ShatteredArchive;
 import tally.shattered_archive.blocks.ShatteredBlocks;
 import tally.shattered_archive.blocks.ShatteredBoat;
-import tally.shattered_archive.blocks.custom.AuroraBlock;
 import tally.shattered_archive.sounds.ShatteredSounds;
 
 public class ShatteredItems {
@@ -116,7 +110,6 @@ public class ShatteredItems {
     public static final Item PEARLWOOD_CHEST_BOAT =
             TerraformBoatItemHelper.registerBoatItem(ShatteredBoat.PEARLWOOD_CHEST_BOAT_ID, ShatteredBoat.PEARLWOOD_BOAT_KEY, true);
 
-
     public static final Item ENCHANTED_WILLOW_SIGN = registerItem("enchanted_willow_sign",
             new SignItem(new Item.Settings().maxCount(16), ShatteredBlocks.ENCHANTED_WILLOW_SIGN, ShatteredBlocks.ENCHANTED_WILLOW_WALL_SIGN));
 
@@ -129,6 +122,9 @@ public class ShatteredItems {
     public static final Item ENCHANTED_WILLOW_CHEST_BOAT =
             TerraformBoatItemHelper.registerBoatItem(ShatteredBoat.ENCHANTED_WILLOW_CHEST_BOAT_ID, ShatteredBoat.ENCHANTED_WILLOW_BOAT_KEY, true);
 
+    public static final Item INKED_XANDRITE = registerItem("inked_xandrite", new Item(new Item.Settings()));
+    public static final Item ARCTICITE_SHARD = registerItem("arcticite_shard", new Item(new Item.Settings()));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(ShatteredArchive.MOD_ID, name), item);
     }
@@ -138,6 +134,12 @@ public class ShatteredItems {
     public static void registerModItems() {
         ShatteredArchive.LOGGER.info("Registering Mod Items for " + ShatteredArchive.MOD_ID);
         ItemGroupEvents.modifyEntriesEvent(MOD_ITEM_GROUP_KEY).register(itemGroup -> {
+            itemGroup.add(INKED_XANDRITE);
+            itemGroup.add(ARCTICITE_SHARD);
+            itemGroup.add(ShatteredBlocks.INKED_XANDRITE_BLOCK);
+            itemGroup.add(ShatteredBlocks.FROSTED_CALCITE);
+            itemGroup.add(ShatteredBlocks.ARCTICITE_ORE);
+
             itemGroup.add(ShatteredItems.MYTHICAL_WORLDS_MUSIC_DISC);
             itemGroup.add(ShatteredItems.AMBER_LEAF_MUSIC_DISC);
             itemGroup.add(ShatteredItems.EMBERS_MUSIC_DISC);

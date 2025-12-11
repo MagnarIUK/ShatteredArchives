@@ -13,6 +13,7 @@ import net.minecraft.loot.entry.AlternativeEntry;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryWrapper;
 import tally.shattered_archive.blocks.ShatteredBlocks;
@@ -70,6 +71,11 @@ public class ShatteredLootTables extends FabricBlockLootTableProvider {
 
         addDrop(ShatteredBlocks.MOONDROP_FLOWER);
         addDrop(ShatteredBlocks.SUNDROP_FLOWER);
+
+        addDrop(ShatteredBlocks.ARCTICITE_ORE, drops(ShatteredBlocks.ARCTICITE_ORE, ShatteredItems.ARCTICITE_SHARD));
+
+        addDrop(ShatteredBlocks.INKED_XANDRITE_BLOCK, drops(ShatteredBlocks.INKED_XANDRITE_BLOCK, ShatteredItems.INKED_XANDRITE));
+        addDrop(ShatteredBlocks.FROSTED_CALCITE);
 
         addDrop(ShatteredBlocks.PEARLWOOD_SAPLING);
         addDrop(ShatteredBlocks.PEARLWOOD_PLANKS);

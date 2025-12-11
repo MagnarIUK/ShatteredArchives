@@ -13,7 +13,7 @@ import tally.shattered_archive.world.biome.ShatteredNetherRegion;
 public class ShatteredMaterialRulesNether {
     private static final MaterialRules.MaterialRule POWDER_SNOW = makeStateRule(Blocks.POWDER_SNOW);
     private static final MaterialRules.MaterialRule SNOW_BLOCK = makeStateRule(Blocks.SNOW_BLOCK);
-    private static final MaterialRules.MaterialRule CALCITE = makeStateRule(Blocks.CALCITE);
+    private static final MaterialRules.MaterialRule CALCITE = makeStateRule(ShatteredBlocks.FROSTED_CALCITE);
     private static final MaterialRules.MaterialRule MAGENTA_TERRACOTTA = makeStateRule(Blocks.MAGENTA_TERRACOTTA);
     private static final MaterialRules.MaterialRule GRASS = makeStateRule(Blocks.GRASS_BLOCK);
     private static final MaterialRules.MaterialRule DIRT = makeStateRule(Blocks.DIRT);

@@ -2,6 +2,7 @@ package tally.shattered_archive;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnLocationTypes;
@@ -57,6 +58,8 @@ public class ShatteredArchive implements ModInitializer {
 		CommandHandler.register();
 		LootTableMods.modifyLootTables();
 		SpawnRestriction.register(EntityType.BREEZE, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
+
+		FuelRegistry.INSTANCE.add(ShatteredItems.INKED_XANDRITE, 1000);
 
 
 		StrippableBlockRegistry.register(ShatteredBlocks.PEARLWOOD_LOG, ShatteredBlocks.STRIPPED_PEARLWOOD_LOG);

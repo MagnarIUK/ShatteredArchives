@@ -3,12 +3,10 @@ package tally.shattered_archive.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
-import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Direction;
 import tally.shattered_archive.ShatteredArchive;
 import tally.shattered_archive.blocks.ShatteredBlocks;
 import tally.shattered_archive.blocks.helpers.ModBlockProperties;
@@ -78,6 +76,10 @@ public class ShatteredModels extends FabricModelProvider {
         registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.GRAY_STAINED_ARCTICITE_GLASS, "gray");
         registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.BLACK_STAINED_ARCTICITE_GLASS, "black");
         registerArcticGlass(blockStateModelGenerator, ShatteredBlocks.BROWN_STAINED_ARCTICITE_GLASS, "brown");
+
+        blockStateModelGenerator.registerSimpleCubeAll(ShatteredBlocks.INKED_XANDRITE_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ShatteredBlocks.FROSTED_CALCITE);
+        blockStateModelGenerator.registerSimpleCubeAll(ShatteredBlocks.ARCTICITE_ORE);
 
         blockStateModelGenerator.registerSimpleCubeAll(ShatteredBlocks.RED_HALLOW_LEAVES);
         blockStateModelGenerator.registerSimpleCubeAll(ShatteredBlocks.ORANGE_HALLOW_LEAVES);
@@ -168,6 +170,9 @@ public class ShatteredModels extends FabricModelProvider {
         itemModelGenerator.register(ShatteredItems.PEARLWOOD_CHEST_BOAT, Models.GENERATED);
         itemModelGenerator.register(ShatteredItems.PEARLWOOD_SIGN, Models.GENERATED);
         itemModelGenerator.register(ShatteredItems.PEARLWOOD_HANGING_SIGN, Models.GENERATED);
+
+        itemModelGenerator.register(ShatteredItems.INKED_XANDRITE, Models.GENERATED);
+        itemModelGenerator.register(ShatteredItems.ARCTICITE_SHARD, Models.GENERATED);
 
         itemModelGenerator.register(ShatteredItems.ENCHANTED_WILLOW_BOAT, Models.GENERATED);
         itemModelGenerator.register(ShatteredItems.ENCHANTED_WILLOW_CHEST_BOAT, Models.GENERATED);

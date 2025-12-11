@@ -11,6 +11,7 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import tally.shattered_archive.ShatteredArchive;
 import tally.shattered_archive.blocks.ShatteredBlocks;
+import tally.shattered_archive.blocks.custom.ShatteredBlockEntities;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -22,6 +23,7 @@ public class ShatteredBlockTagGen extends FabricTagProvider<Block> {
     public static final TagKey<Block> PEARLWOOD_LOGS  = of("pearlwood_logs");
     public static final TagKey<Block> ENCHANTED_WILLOW_LOGS  = of("enchanted_willow_logs");
     public static final TagKey<Block> DROOPING_WILLOW  = of("hanging_willow");
+    public static final TagKey<Block> ARCTICITE_GLASS  = of("arcticite_glass");
 
     private static TagKey<Block> of(String id) {
         return TagKey.of(RegistryKeys.BLOCK, Identifier.of(ShatteredArchive.MOD_ID, id));
@@ -53,6 +55,25 @@ public class ShatteredBlockTagGen extends FabricTagProvider<Block> {
 
         getOrCreateTagBuilder(BlockTags.ICE)
                 .add(ShatteredBlocks.BLOOD_ICE);
+
+        getOrCreateTagBuilder(ARCTICITE_GLASS)
+                .add(ShatteredBlocks.ARCTICITE_GLASS)
+                .add(ShatteredBlocks.RED_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.ORANGE_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.YELLOW_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.LIME_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.GREEN_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.CYAN_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.LIGHT_BLUE_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.BLUE_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.PURPLE_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.MAGENTA_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.PINK_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.WHITE_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.LIGHT_GRAY_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.GRAY_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.BLACK_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.BROWN_STAINED_ARCTICITE_GLASS);
 
         getOrCreateTagBuilder(BlockTags.DRIPSTONE_REPLACEABLE_BLOCKS)
                 .add(Blocks.ICE)
@@ -86,7 +107,31 @@ public class ShatteredBlockTagGen extends FabricTagProvider<Block> {
                 .add(ShatteredBlocks.SMOOTH_INK_SANDSTONE)
                 .add(ShatteredBlocks.CUT_INK_SANDSTONE)
                 .add(ShatteredBlocks.CUT_INK_SANDSTONE_SLAB)
-                .add(ShatteredBlocks.CHISELED_INK_SANDSTONE);
+                .add(ShatteredBlocks.CHISELED_INK_SANDSTONE)
+                .add(ShatteredBlocks.INKED_XANDRITE_BLOCK)
+                .add(ShatteredBlocks.FROSTED_CALCITE)
+                .add(ShatteredBlocks.ARCTICITE_ORE);
+
+        getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_GOLD_TOOL)
+                .add(ShatteredBlocks.ARCTICITE_ORE);
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+                .add(ShatteredBlocks.ARCTICITE_ORE);
+
+        getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_STONE_TOOL)
+                .add(ShatteredBlocks.ARCTICITE_ORE);
+
+        getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_WOODEN_TOOL)
+                .add(ShatteredBlocks.ARCTICITE_ORE);
+
+        getOrCreateTagBuilder(BlockTags.SCULK_REPLACEABLE)
+                .add(ShatteredBlocks.FROSTED_CALCITE);
+
+        getOrCreateTagBuilder(BlockTags.DRIPSTONE_REPLACEABLE_BLOCKS)
+                .add(ShatteredBlocks.FROSTED_CALCITE);
+
+        getOrCreateTagBuilder(BlockTags.SCULK_REPLACEABLE_WORLD_GEN)
+                .add(ShatteredBlocks.FROSTED_CALCITE);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ShatteredBlocks.INK_SAND)
@@ -172,6 +217,12 @@ public class ShatteredBlockTagGen extends FabricTagProvider<Block> {
                 .add(ShatteredBlocks.MOONDROP_FLOWER)
                 .add(ShatteredBlocks.SPIDER_LILY)
                 .add(ShatteredBlocks.DWARF_LAVENDER);
+
+        getOrCreateTagBuilder(BlockTags.VIBRATION_RESONATORS)
+                .add(ShatteredBlocks.INKED_XANDRITE_BLOCK);
+
+        getOrCreateTagBuilder(BlockTags.CRYSTAL_SOUND_BLOCKS)
+                .add(ShatteredBlocks.INKED_XANDRITE_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
                 .add(ShatteredBlocks.POTTED_MANABLOOM)

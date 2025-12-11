@@ -20,6 +20,7 @@ import net.minecraft.resource.featuretoggle.FeatureSet;
 import tally.shattered_archive.blocks.ShatteredBlocks;
 import tally.shattered_archive.items.ShatteredItems;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ShatteredRecipeGen extends FabricRecipeProvider {
@@ -52,6 +53,25 @@ public class ShatteredRecipeGen extends FabricRecipeProvider {
         FabricRecipeProvider.offerChestBoatRecipe(recipeExporter, ShatteredItems.PEARLWOOD_CHEST_BOAT, ShatteredBlocks.PEARLWOOD_PLANKS);
         FabricRecipeProvider.offerBarkBlockRecipe(recipeExporter, ShatteredBlocks.PEARLWOOD_WOOD, ShatteredBlocks.PEARLWOOD_LOG);
         FabricRecipeProvider.offerBarkBlockRecipe(recipeExporter, ShatteredBlocks.STRIPPED_PEARLWOOD_WOOD, ShatteredBlocks.STRIPPED_PEARLWOOD_LOG);
+
+        FabricRecipeProvider.offerSmelting(
+                recipeExporter,
+                List.of(ShatteredBlocks.FROSTED_CALCITE.asItem()),
+                RecipeCategory.BUILDING_BLOCKS,
+                Items.CALCITE,
+                0.2f,
+                300,
+                "defrosting"
+        );
+        FabricRecipeProvider.offerBlasting(
+                recipeExporter,
+                List.of(ShatteredBlocks.FROSTED_CALCITE.asItem()),
+                RecipeCategory.BUILDING_BLOCKS,
+                Items.CALCITE,
+                0.2f,
+                150,
+                "defrosting"
+        );
 
         FabricRecipeProvider.generateFamily(recipeExporter, ShatteredBlocks.ENCHANTED_WILLOW_FAMILY, FeatureSet.of(FeatureFlags.VANILLA));
         offerPlanksRecipe(recipeExporter, ShatteredBlocks.ENCHANTED_WILLOW_PLANKS, ShatteredItemTagGen.ENCHANTED_WILLOW_LOGS, 4);
