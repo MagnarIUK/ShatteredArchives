@@ -165,6 +165,7 @@ public class ShatteredBlocks {
             )
     );
 
+
     private static final Identifier PEARLWOOD_SIGN_TEXTURE = ShatteredArchive.id("entity/signs/pearlwood");
     private static final Identifier PEARLWOOD_HANGING_SIGN_TEXTURE = ShatteredArchive.id("entity/signs/hanging/pearlwood");
     private static final Identifier PEARLWOOD_HANGING_SIGN_GUI_TEXTURE = ShatteredArchive.id("textures/gui/hanging_signs/pearlwood");
@@ -667,6 +668,17 @@ public class ShatteredBlocks {
         return 2;
     }).nonOpaque().postProcess(ShatteredBlocks::always).emissiveLighting(ShatteredBlocks::always).ticksRandomly()), 4));
 
+    public static final Block INKED_XANDRITE_BLOCK = register("inked_xandrite_block",
+            new Block(AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK).strength(1.5F)
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK).requiresTool()));
+
+    public static final Block FROSTED_CALCITE = register("frosted_calcite",
+            new Block(AbstractBlock.Settings.copy(Blocks.CALCITE).instrument(NoteBlockInstrument.BASEDRUM).
+                    sounds(BlockSoundGroup.CALCITE).requiresTool().strength(0.75f)));
+
+    public static final Block ARCTICITE_ORE = register("arcticite_ore",
+            new Block(AbstractBlock.Settings.copy(Blocks.DIAMOND_ORE).sounds(BlockSoundGroup.STONE).requiresTool().strength(3.0f, 3.0f)));
+
     private static boolean always(BlockState blockState, net.minecraft.world.BlockView blockView, BlockPos blockPos) {
         return true;
     }
@@ -685,6 +697,7 @@ public class ShatteredBlocks {
         Registry.register(Registries.BLOCK, Identifier.of("shatteredarchive", path), block);
         return block;
     }
+
 
     public static Block createLogBlock(MapColor topMapColor, MapColor sideMapColor) {
         return new PillarBlock(

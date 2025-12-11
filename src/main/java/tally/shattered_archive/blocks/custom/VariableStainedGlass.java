@@ -16,6 +16,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import tally.shattered_archive.blocks.helpers.ModBlockProperties;
+import tally.shattered_archive.datagen.ShatteredBlockTagGen;
 
 import java.util.Objects;
 
@@ -73,7 +74,7 @@ public class VariableStainedGlass extends TransparentBlock implements Stainable 
             @Nullable Direction high = null;
             for (Direction dir : Direction.values()) {
                 BlockState bState = world.getBlockState(pos.offset(dir));
-                if (bState.isOf(this)) {
+                if (bState.isIn(ShatteredBlockTagGen.ARCTICITE_GLASS)) {
                     if (bState.get(CARRY) > hC) {
                         hC = bState.get(CARRY);
                         newO = bState.get(OPAQUENESS);
@@ -87,7 +88,7 @@ public class VariableStainedGlass extends TransparentBlock implements Stainable 
                 BlockPos newPos = pos.offset(high);
                 for (Direction dir : Direction.values()) {
                     BlockState bState = world.getBlockState(newPos.offset(dir));
-                    if (bState.isOf(this)) {
+                    if (bState.isIn(ShatteredBlockTagGen.ARCTICITE_GLASS)) {
                         if (bState.get(CARRY) > hC) {
                             higher = true;
                         }

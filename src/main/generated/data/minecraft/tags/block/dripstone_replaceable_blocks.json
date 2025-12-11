@@ -4,6 +4,7 @@
     "minecraft:packed_ice",
     "minecraft:calcite",
     "minecraft:snow_block",
-    "minecraft:blue_ice"
+    "minecraft:blue_ice",
+    "shatteredarchive:frosted_calcite"
   ]
 }

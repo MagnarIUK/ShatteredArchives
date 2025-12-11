@@ -16,7 +16,9 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import tally.shattered_archive.blocks.ShatteredBlocks;
 import tally.shattered_archive.blocks.helpers.ModBlockProperties;
+import tally.shattered_archive.datagen.ShatteredBlockTagGen;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -55,6 +57,7 @@ public class VariableGlass extends TransparentBlock {
         }
     }
 
+
     @Override
     protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (world.isReceivingRedstonePower(pos)) {
@@ -68,7 +71,7 @@ public class VariableGlass extends TransparentBlock {
             @Nullable Direction high = null;
             for (Direction dir : Direction.values()) {
                 BlockState bState = world.getBlockState(pos.offset(dir));
-                if (bState.isOf(this)) {
+                if (bState.isIn(ShatteredBlockTagGen.ARCTICITE_GLASS)) {
                     if (bState.get(CARRY) > hC) {
                         hC = bState.get(CARRY);
                         newO = bState.get(OPAQUENESS);
@@ -82,7 +85,7 @@ public class VariableGlass extends TransparentBlock {
                 BlockPos newPos = pos.offset(high);
                 for (Direction dir : Direction.values()) {
                     BlockState bState = world.getBlockState(newPos.offset(dir));
-                    if (bState.isOf(this)) {
+                    if (bState.isIn(ShatteredBlockTagGen.ARCTICITE_GLASS)) {
                         if (bState.get(CARRY) > hC) {
                             higher = true;
                         }
