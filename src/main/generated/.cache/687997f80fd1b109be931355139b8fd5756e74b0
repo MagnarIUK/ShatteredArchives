@@ -1,11 +1,11 @@
-// 1.21.1	2025-12-11T18:33:03.571190853	ShatteredArchive/Tags for minecraft:block
+// 1.21.1	2025-12-13T21:11:12.452888046	ShatteredArchive/Tags for minecraft:block
 ee2157bc137952c82d5511704abec1ecdf81e2a1 data/minecraft/tags/block/planks.json
 e38a4223d2e92c96d6ec60f59e4d48f2926fbde1 data/minecraft/tags/block/wooden_fences.json
 8997083075478e4e633fe1d63860c8283ea0bdc2 data/minecraft/tags/block/wooden_trapdoors.json
 af73c70c8c9d01ddabccc68ad63798faec26b211 data/minecraft/tags/block/snow_layer_cannot_survive_on.json
 6eca348bb6e6ea7b820cceddeba1ce2b4c8b0dd8 data/minecraft/tags/block/wooden_slabs.json
 4dab43b936e40081c9e3b8965065edc6a59965b7 data/minecraft/tags/block/leaves.json
-493b95ceee3196e6744339a0894bb55576084af9 data/minecraft/tags/block/base_stone_nether.json
+b3111da3623026cd9319e8a9fcd11ac4876cf7a1 data/minecraft/tags/block/base_stone_nether.json
 4f288c2110874d05a588b22e1f4f56d059475a7b data/minecraft/tags/block/mineable/shovel.json
 19dbed0d36ba56b592e703c2d0e8ebf23f702a01 data/minecraft/tags/block/stairs.json
 04a55ab31ac4b5517a8ecb433244edd31b179371 data/minecraft/tags/block/needs_iron_tool.json
@@ -18,6 +18,7 @@ b31d72bf558e328edee6325dde902418ea24876a data/minecraft/tags/block/saplings.json
 edf25c0fbc8a80db70198f278cb0df19f0a0d28d data/minecraft/tags/block/flowers.json
 2d5c901f9bfa7c536cf234753ffeb44149edda11 data/shatteredarchive/tags/block/hanging_willow.json
 1eb096078d8b830f45783624db2a88e27861c96b data/minecraft/tags/block/sculk_replaceable.json
+4c32700c205974294c17b8e99972021f61960533 data/shatteredarchive/tags/block/glass_breakable.json
 93b2462aa992b5f9cc369ca40130a846199171c5 data/minecraft/tags/block/logs.json
 054468ae3e5fcc6c3eef4c3cecf4aa90cab96d34 data/shatteredarchive/tags/block/arcticite_glass.json
 781480186408e00d388f227e8ee9f1d95ad48821 data/minecraft/tags/block/crystal_sound_blocks.json

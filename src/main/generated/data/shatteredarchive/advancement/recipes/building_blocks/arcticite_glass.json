@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blue_ice": {
+    "has_arcticite_shard": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:blue_ice"
+            "items": "shatteredarchive:arcticite_shard"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_blue_ice"
+      "has_arcticite_shard"
     ]
   ],
   "rewards": {

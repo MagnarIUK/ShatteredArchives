@@ -2,6 +2,7 @@ package tally.shattered_archive.world;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.registry.Registerable;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -43,10 +44,25 @@ public class ShatteredPlacedFeatures {
     public static final RegistryKey<PlacedFeature> HUGE_BLUE_MUSH = registerKey("huge_blue_mush");
     public static final RegistryKey<PlacedFeature> PINK_MUSH = registerKey("pink_mush");
     public static final RegistryKey<PlacedFeature> HUGE_PINK_MUSH = registerKey("huge_pink_mush");
+    public static final RegistryKey<PlacedFeature> ORE_ARCTICITE = registerKey("ore_arcticite");
 
+    private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
+        return List.of(countModifier, SquarePlacementModifier.of(), heightModifier, BiomePlacementModifier.of());
+    }
+
+    private static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier heightModifier) {
+        return modifiers(CountPlacementModifier.of(count), heightModifier);
+    }
+
+    private static List<PlacementModifier> modifiersWithRarity(int chance, PlacementModifier heightModifier) {
+        return modifiers(RarityFilterPlacementModifier.of(chance), heightModifier);
+    }
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+
+        register(context, ORE_ARCTICITE, configuredFeatures.getOrThrow(ShatteredConfiguredFeatures.ORE_ARCTICITE), modifiersWithCount(14,
+                HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(200)) ));
 
         register(context, SPIDER_LILLIES, configuredFeatures.getOrThrow(ShatteredConfiguredFeatures.SPIDER_LILLIES), RarityFilterPlacementModifier.of(6), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 

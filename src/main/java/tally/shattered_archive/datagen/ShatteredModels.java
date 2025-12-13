@@ -173,7 +173,8 @@ public class ShatteredModels extends FabricModelProvider {
 
         itemModelGenerator.register(ShatteredItems.INKED_XANDRITE, Models.GENERATED);
         itemModelGenerator.register(ShatteredItems.ARCTICITE_SHARD, Models.GENERATED);
-
+        itemModelGenerator.register(ShatteredItems.GLASS_CUTTER, Models.GENERATED);
+        itemModelGenerator.register(ShatteredItems.GLASS_CUTER, Models.GENERATED);
         itemModelGenerator.register(ShatteredItems.ENCHANTED_WILLOW_BOAT, Models.GENERATED);
         itemModelGenerator.register(ShatteredItems.ENCHANTED_WILLOW_CHEST_BOAT, Models.GENERATED);
         itemModelGenerator.register(ShatteredItems.ENCHANTED_WILLOW_SIGN, Models.GENERATED);

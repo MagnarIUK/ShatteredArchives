@@ -23,6 +23,7 @@ public class ShatteredArchiveDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ShatteredItemTagGen::new);
 		pack.addProvider(ShatteredBlockTagGen::new);
 		pack.addProvider(ShatteredRecipeGen::new);
+		pack.addProvider(ShatteredAdvancementGen::new);
 	}
 
 	@Override

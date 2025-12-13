@@ -4,6 +4,17 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.AlternativeLootCondition;
+import net.minecraft.loot.condition.LootCondition;
+import net.minecraft.loot.condition.MatchToolLootCondition;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.predicate.item.EnchantmentPredicate;
+import net.minecraft.predicate.item.ItemPredicate;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
@@ -12,6 +23,7 @@ import net.minecraft.util.Identifier;
 import tally.shattered_archive.ShatteredArchive;
 import tally.shattered_archive.blocks.ShatteredBlocks;
 import tally.shattered_archive.blocks.custom.ShatteredBlockEntities;
+import tally.shattered_archive.items.ShatteredItems;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -24,7 +36,7 @@ public class ShatteredBlockTagGen extends FabricTagProvider<Block> {
     public static final TagKey<Block> ENCHANTED_WILLOW_LOGS  = of("enchanted_willow_logs");
     public static final TagKey<Block> DROOPING_WILLOW  = of("hanging_willow");
     public static final TagKey<Block> ARCTICITE_GLASS  = of("arcticite_glass");
-
+    public static final TagKey<Block> GLASS = of("glass_breakable");
     private static TagKey<Block> of(String id) {
         return TagKey.of(RegistryKeys.BLOCK, Identifier.of(ShatteredArchive.MOD_ID, id));
     }
@@ -52,6 +64,62 @@ public class ShatteredBlockTagGen extends FabricTagProvider<Block> {
                 .add(ShatteredBlocks.BLUE_ENCHANTED_WILLOW_LEAVES)
                 .add(ShatteredBlocks.GLOWING_ENCHANTED_WILLOW_LEAVES)
                 .add(ShatteredBlocks.GLOWING_BLUE_ENCHANTED_WILLOW_LEAVES);
+        getOrCreateTagBuilder(BlockTags.BASE_STONE_NETHER)
+                .add(ShatteredBlocks.FROSTED_CALCITE);
+
+        getOrCreateTagBuilder(ShatteredBlockTagGen.GLASS)
+                .add(ShatteredBlocks.ARCTICITE_GLASS)
+                .add(ShatteredBlocks.RED_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.ORANGE_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.YELLOW_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.LIME_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.GREEN_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.CYAN_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.LIGHT_BLUE_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.BLUE_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.PURPLE_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.MAGENTA_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.PINK_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.WHITE_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.LIGHT_GRAY_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.GRAY_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.BLACK_STAINED_ARCTICITE_GLASS)
+                .add(ShatteredBlocks.BROWN_STAINED_ARCTICITE_GLASS)
+                .add(Blocks.GLASS)
+                .add(Blocks.WHITE_STAINED_GLASS)
+                .add(Blocks.ORANGE_STAINED_GLASS)
+                .add(Blocks.MAGENTA_STAINED_GLASS)
+                .add(Blocks.LIGHT_BLUE_STAINED_GLASS)
+                .add(Blocks.YELLOW_STAINED_GLASS)
+                .add(Blocks.LIME_STAINED_GLASS)
+                .add(Blocks.PINK_STAINED_GLASS)
+                .add(Blocks.GRAY_STAINED_GLASS)
+                .add(Blocks.LIGHT_GRAY_STAINED_GLASS)
+                .add(Blocks.CYAN_STAINED_GLASS)
+                .add(Blocks.PURPLE_STAINED_GLASS)
+                .add(Blocks.BLUE_STAINED_GLASS)
+                .add(Blocks.BROWN_STAINED_GLASS)
+                .add(Blocks.GREEN_STAINED_GLASS)
+                .add(Blocks.RED_STAINED_GLASS)
+                .add(Blocks.BLACK_STAINED_GLASS)
+                .add(Blocks.GLASS_PANE)
+                .add(Blocks.WHITE_STAINED_GLASS_PANE)
+                .add(Blocks.ORANGE_STAINED_GLASS_PANE)
+                .add(Blocks.MAGENTA_STAINED_GLASS_PANE)
+                .add(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE)
+                .add(Blocks.YELLOW_STAINED_GLASS_PANE)
+                .add(Blocks.LIME_STAINED_GLASS_PANE)
+                .add(Blocks.PINK_STAINED_GLASS_PANE)
+                .add(Blocks.GRAY_STAINED_GLASS_PANE)
+                .add(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE)
+                .add(Blocks.CYAN_STAINED_GLASS_PANE)
+                .add(Blocks.PURPLE_STAINED_GLASS_PANE)
+                .add(Blocks.BLUE_STAINED_GLASS_PANE)
+                .add(Blocks.BROWN_STAINED_GLASS_PANE)
+                .add(Blocks.GREEN_STAINED_GLASS_PANE)
+                .add(Blocks.RED_STAINED_GLASS_PANE)
+                .add(Blocks.BLACK_STAINED_GLASS_PANE)
+                .add(Blocks.TINTED_GLASS);
 
         getOrCreateTagBuilder(BlockTags.ICE)
                 .add(ShatteredBlocks.BLOOD_ICE);
@@ -239,5 +307,9 @@ public class ShatteredBlockTagGen extends FabricTagProvider<Block> {
         getOrCreateTagBuilder(DROOPING_WILLOW)
                 .add(ShatteredBlocks.BLUE_ENCHANTED_WILLOW_DROOPING_LEAVES)
                 .add(ShatteredBlocks.ENCHANTED_WILLOW_DROOPING_LEAVES);
+
     }
+
+
+
 }

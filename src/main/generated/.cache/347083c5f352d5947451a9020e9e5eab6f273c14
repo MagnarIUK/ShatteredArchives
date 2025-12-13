@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-11T18:33:03.569599327	ShatteredArchive/Block Loot Tables
+// 1.21.1	2025-12-13T21:11:12.451282676	ShatteredArchive/Block Loot Tables
 64669303de1c490abb42f748baeb8c4245e429bd data/shatteredarchive/loot_table/blocks/light_gray_hallow_leaves.json
 24d7e9c8cd81a27e604b828bc7f702bdb01e1dc5 data/shatteredarchive/loot_table/blocks/black_stained_arcticite_glass.json
 14bd5f508d60088fb5e45fbae66dc93fbb9a96e3 data/shatteredarchive/loot_table/blocks/gray_stained_arcticite_glass.json
@@ -44,7 +44,7 @@ a901c4966aeeb39e1afea768d45951394a0dbd85 data/shatteredarchive/loot_table/blocks
 6d0184a3456aa8168a907d0adb8d4a487a28b5aa data/shatteredarchive/loot_table/blocks/medium_sol_aurora_bud.json
 7d64ac9afb8299b3b0da1522cc3fa0e5bfc613d7 data/shatteredarchive/loot_table/blocks/brown_hallow_leaves.json
 97c904124815f8d67ff9be6f00c3d967d235ee1d data/shatteredarchive/loot_table/blocks/enchanted_willow_door.json
-4060ffb14cd0d6c950f769e02eba078f74af13e4 data/shatteredarchive/loot_table/blocks/arcticite_ore.json
+7580982a0ea9ba1a017b5221945003f4ad113a61 data/shatteredarchive/loot_table/blocks/arcticite_ore.json
 51b04773e9483293e959d8204dcdef8e4dbbb0ba data/shatteredarchive/loot_table/blocks/enchanted_willow_wall_hanging_sign.json
 9a00bbd45d445fbc6e1934a1d1e710d5c617ac86 data/shatteredarchive/loot_table/blocks/cockatrice_of_the_woods.json
 62cf36f08b23545fcc0b474df421732bb388427f data/shatteredarchive/loot_table/blocks/white_stained_arcticite_glass.json
