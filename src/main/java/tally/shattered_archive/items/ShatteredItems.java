@@ -133,6 +133,13 @@ public class ShatteredItems {
                     .component(DataComponentTypes.TOOL, GlassCutterItem.createToolComponent())
             )
     );
+    public static final Item GLASS_CUTER = registerItem("glass_cuter", new GlassCutterItem(
+                    new Item.Settings()
+                            .maxDamage(250)
+                            .maxCount(1)
+                            .component(DataComponentTypes.TOOL, GlassCutterItem.createToolComponent())
+            )
+    );
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(ShatteredArchive.MOD_ID, name), item);
@@ -146,6 +153,7 @@ public class ShatteredItems {
             itemGroup.add(INKED_XANDRITE);
             itemGroup.add(ARCTICITE_SHARD);
             itemGroup.add(GLASS_CUTTER);
+            itemGroup.add(GLASS_CUTER);
             itemGroup.add(ShatteredBlocks.INKED_XANDRITE_BLOCK);
             itemGroup.add(ShatteredBlocks.FROSTED_CALCITE);
             itemGroup.add(ShatteredBlocks.ARCTICITE_ORE);

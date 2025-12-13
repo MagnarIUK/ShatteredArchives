@@ -1,6 +1,6 @@
 {
   "type": "minecraft:jigsaw",
-  "biomes": "shatteredarchive:enchanted_willow_forest",
+  "biomes": "shatteredarchive:the_zone",
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",
   "start_pool": "shatteredarchive:fairy_pond",

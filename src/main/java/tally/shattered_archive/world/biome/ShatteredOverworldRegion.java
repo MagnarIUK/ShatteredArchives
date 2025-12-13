@@ -22,7 +22,7 @@ public class ShatteredOverworldRegion extends Region {
                     RegistryKey<Biome>>> mapper) {
         this.addModifiedVanillaOverworldBiomes(mapper, modifiedVanillaOverworldBuilder -> {
             modifiedVanillaOverworldBuilder.replaceBiome(BiomeKeys.PLAINS, ShatteredBiomes.GRAVITY_SPRINGS);
-            modifiedVanillaOverworldBuilder.replaceBiome(BiomeKeys.JUNGLE, ShatteredBiomes.ENCHANTED_WILLOW_FOREST);
+            modifiedVanillaOverworldBuilder.replaceBiome(BiomeKeys.JUNGLE, ShatteredBiomes.THE_ZONE);
             modifiedVanillaOverworldBuilder.replaceBiome(BiomeKeys.DEEP_COLD_OCEAN, ShatteredBiomes.ABYSSAL_OCEAN);
             modifiedVanillaOverworldBuilder.replaceBiome(BiomeKeys.DESERT, ShatteredBiomes.INK_DESERT);
             //modifiedVanillaOverworldBuilder.replaceBiome(BiomeKeys.OLD_GROWTH_PINE_TAIGA, ShatteredBiomes.GIANTS_FOREST);
