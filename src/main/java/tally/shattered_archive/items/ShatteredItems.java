@@ -3,6 +3,7 @@ package tally.shattered_archive.items;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -125,6 +126,14 @@ public class ShatteredItems {
     public static final Item INKED_XANDRITE = registerItem("inked_xandrite", new Item(new Item.Settings()));
     public static final Item ARCTICITE_SHARD = registerItem("arcticite_shard", new Item(new Item.Settings()));
 
+    public static final Item GLASS_CUTTER = registerItem("glass_cutter", new GlassCutterItem(
+            new Item.Settings()
+                    .maxDamage(250)
+                    .maxCount(1)
+                    .component(DataComponentTypes.TOOL, GlassCutterItem.createToolComponent())
+            )
+    );
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(ShatteredArchive.MOD_ID, name), item);
     }
@@ -136,6 +145,7 @@ public class ShatteredItems {
         ItemGroupEvents.modifyEntriesEvent(MOD_ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(INKED_XANDRITE);
             itemGroup.add(ARCTICITE_SHARD);
+            itemGroup.add(GLASS_CUTTER);
             itemGroup.add(ShatteredBlocks.INKED_XANDRITE_BLOCK);
             itemGroup.add(ShatteredBlocks.FROSTED_CALCITE);
             itemGroup.add(ShatteredBlocks.ARCTICITE_ORE);

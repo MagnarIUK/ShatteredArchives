@@ -8,6 +8,8 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.structure.rule.BlockMatchRuleTest;
+import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.Direction;
@@ -58,9 +60,18 @@ public class ShatteredConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> HUGE_ENCHANTED_PINK_MUSHROOM = registerKey("huge_enchanted_pink_mushroom");
     public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_MUSH_PATCH = registerKey("enchanted_mush_patch");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PINK_MUSH_PATCH = registerKey("enchanted_pink_mush_patch");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_ARCTICITE = registerKey("ore_arcticite");
+
+
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
+        List<OreFeatureConfig.Target> oreArcticiteTarget =
+                List.of(OreFeatureConfig.createTarget(new BlockMatchRuleTest(ShatteredBlocks.FROSTED_CALCITE),
+                        ShatteredBlocks.ARCTICITE_ORE.getDefaultState()));
+
         RegistryEntryLookup<ConfiguredFeature<?, ?>> registryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+        register(context, ORE_ARCTICITE, Feature.ORE,
+                new OreFeatureConfig(oreArcticiteTarget, 5));
 
         register(context, BLUE_MUSH_PATCH, Feature.RANDOM_PATCH, ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ShatteredBlocks.ENCHANTED_BLUE_MUSHROOM))));
 

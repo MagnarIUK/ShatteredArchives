@@ -36,6 +36,11 @@ public class ShatteredItemTagGen extends FabricTagProvider<Item> {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
+        getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE)
+                .add(ShatteredItems.GLASS_CUTTER);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(ShatteredItems.GLASS_CUTTER);
+
         getOrCreateTagBuilder(ItemTags.FLOWERS)
                 .add(ShatteredBlocks.MANABLOOM.asItem())
                 .add(ShatteredBlocks.SUNDROP_FLOWER.asItem())

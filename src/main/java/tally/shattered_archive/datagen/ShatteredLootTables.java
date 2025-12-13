@@ -2,19 +2,30 @@ package tally.shattered_archive.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Block;
 import net.minecraft.block.SnowBlock;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.condition.EntityPropertiesLootCondition;
+import net.minecraft.loot.condition.LootCondition;
+import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.entry.AlternativeEntry;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.entry.LootPoolEntry;
+import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
+import net.minecraft.predicate.item.ItemPredicate;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import tally.shattered_archive.blocks.ShatteredBlocks;
 import tally.shattered_archive.items.ShatteredItems;
@@ -71,8 +82,18 @@ public class ShatteredLootTables extends FabricBlockLootTableProvider {
 
         addDrop(ShatteredBlocks.MOONDROP_FLOWER);
         addDrop(ShatteredBlocks.SUNDROP_FLOWER);
-
-        addDrop(ShatteredBlocks.ARCTICITE_ORE, drops(ShatteredBlocks.ARCTICITE_ORE, ShatteredItems.ARCTICITE_SHARD));
+        RegistryWrapper.Impl<Enchantment> enchantmentLookup = registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
+        addDrop(
+                ShatteredBlocks.ARCTICITE_ORE,
+                block -> dropsWithSilkTouch(
+                        block, applyExplosionDecay(
+                                block,
+                                ItemEntry.builder(ShatteredItems.ARCTICITE_SHARD)
+                                        .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1)))
+                                        .apply(ApplyBonusLootFunction.oreDrops(enchantmentLookup.getOrThrow(Enchantments.FORTUNE)))
+                        )
+                )
+        );
 
         addDrop(ShatteredBlocks.INKED_XANDRITE_BLOCK, drops(ShatteredBlocks.INKED_XANDRITE_BLOCK, ShatteredItems.INKED_XANDRITE));
         addDrop(ShatteredBlocks.FROSTED_CALCITE);

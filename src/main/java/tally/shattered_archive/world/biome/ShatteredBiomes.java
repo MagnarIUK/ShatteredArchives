@@ -5,7 +5,6 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.sound.MusicType;
 import net.minecraft.sound.SoundEvents;
@@ -24,8 +23,8 @@ public class ShatteredBiomes {
             Identifier.of(ShatteredArchive.MOD_ID, "gravity_springs"));
     public static final RegistryKey<Biome> BLOOD_STAINED_TUNDRA = RegistryKey.of(RegistryKeys.BIOME,
             Identifier.of(ShatteredArchive.MOD_ID, "blood_stained_tundra"));
-    public static final RegistryKey<Biome> THE_ZONE = RegistryKey.of(RegistryKeys.BIOME,
-            Identifier.of(ShatteredArchive.MOD_ID, "the_zone"));
+    public static final RegistryKey<Biome> ENCHANTED_WILLOW_FOREST = RegistryKey.of(RegistryKeys.BIOME,
+            Identifier.of(ShatteredArchive.MOD_ID, "enchanted_willow_forest"));
     public static final RegistryKey<Biome> ABYSSAL_OCEAN = RegistryKey.of(RegistryKeys.BIOME,
             Identifier.of(ShatteredArchive.MOD_ID, "abyssal_ocean"));
     public static final RegistryKey<Biome> INK_DESERT = RegistryKey.of(RegistryKeys.BIOME,
@@ -36,7 +35,7 @@ public class ShatteredBiomes {
     public static void boostrap(Registerable<Biome> context) {
         context.register(GRAVITY_SPRINGS, gravitySprings(context));
         context.register(BLOOD_STAINED_TUNDRA, bloodStainedTundra(context));
-        context.register(THE_ZONE, theZone(context));
+        context.register(ENCHANTED_WILLOW_FOREST, theZone(context));
         context.register(ABYSSAL_OCEAN, abyssalOcean(context));
         context.register(INK_DESERT, inkDesert(context));
         //context.register(GIANTS_FOREST, giantsForest(context));

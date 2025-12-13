@@ -4,10 +4,10 @@
   "group": "arcticite_glass",
   "key": {
     "#": {
-      "item": "minecraft:blue_ice"
+      "item": "minecraft:glass"
     },
     "X": {
-      "item": "minecraft:glass"
+      "item": "shatteredarchive:arcticite_shard"
     }
   },
   "pattern": [

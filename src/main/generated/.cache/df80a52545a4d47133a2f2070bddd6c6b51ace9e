@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-11T18:33:03.574583975	ShatteredArchive/Tags for minecraft:item
+// 1.21.1	2025-12-13T20:18:33.740571741	ShatteredArchive/Tags for minecraft:item
 806dcdcf5f9323371dd4209d14ca1c4bbcd23782 data/shatteredarchive/tags/item/arcticite_glass.json
 67c86d1a3b674041c4cda4d20c7d688aa5575561 data/shatteredarchive/tags/item/witch_discs.json
 4be31079d712ad186f384872a4ecd61439453366 data/shatteredarchive/tags/item/guardian_discs.json
@@ -9,11 +9,13 @@ be94ef34e642ee1248ae1fd6dcebe12713e3c03a data/minecraft/tags/item/wooden_doors.j
 22088eef1631025b43565d0c78421bc4f242c1e2 data/shatteredarchive/tags/item/pearlwood_logs.json
 dc51537d55b7d732399b2efa9ef20247f3e3c768 data/minecraft/tags/item/wooden_pressure_plates.json
 e8d4367eb41586ab124c0c77852795295e7febdc data/shatteredarchive/tags/item/ink_sand.json
+b6e60167e4a4efc8b0c92c94113ca1682d8b7ed7 data/minecraft/tags/item/enchantable/mining.json
 cd3ca32dd5ad367ddb8c9e32b5ff75adcf26a929 data/minecraft/tags/item/logs.json
 6eca348bb6e6ea7b820cceddeba1ce2b4c8b0dd8 data/minecraft/tags/item/wooden_slabs.json
 2fcff2baab629d9374f82c8488cdd0a3922371ca data/shatteredarchive/tags/item/enchanted_willow_logs.json
 7ba05ac6792dc265ead92fe505506a390ba45127 data/minecraft/tags/item/wooden_buttons.json
 b3e948e72bdb9d6219eb75330d40397bcdd05702 data/minecraft/tags/item/fence_gates.json
+b6e60167e4a4efc8b0c92c94113ca1682d8b7ed7 data/minecraft/tags/item/enchantable/durability.json
 edf25c0fbc8a80db70198f278cb0df19f0a0d28d data/minecraft/tags/item/flowers.json
 e38a4223d2e92c96d6ec60f59e4d48f2926fbde1 data/minecraft/tags/item/wooden_fences.json
 78e2bfcb7050e9f199188415bfc810258ab3fa1b data/minecraft/tags/item/leaves.json

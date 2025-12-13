@@ -3,10 +3,7 @@ package tally.shattered_archive.world.biome;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryEntryLookup;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.*;
 import net.minecraft.sound.BiomeAdditionsSound;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.sound.MusicType;
@@ -17,11 +14,14 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.carver.ConfiguredCarvers;
 import net.minecraft.world.gen.feature.*;
-import tally.shattered_archive.world.ShatteredFeatures;
 import tally.shattered_archive.world.ShatteredPlacedFeatures;
 
 public class FrostfellBiome {
     public static final MultiNoiseUtil.NoiseHypercube NOISE_POINT = MultiNoiseUtil.createNoiseHypercube(-0.45F, -0.3F, 0.0F, 0.0F, 0.0F, 0.0F, 0.4F);
+
+
+
+
 
     public static Biome create(Registerable<Biome> registerable) {
         return new Biome.Builder()
@@ -51,9 +51,7 @@ public class FrostfellBiome {
 
         // DEFAULT MINECRAFT FEATURES
         builder.carver(GenerationStep.Carver.AIR, ConfiguredCarvers.NETHER_CAVE);
-
         builder.feature(GenerationStep.Feature.LAKES, ShatteredPlacedFeatures.FROZEN_LAVA);
-
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShatteredPlacedFeatures.ARCTICITE_COLUMNS);
 
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MiscPlacedFeatures.BLUE_ICE);
@@ -62,6 +60,8 @@ public class FrostfellBiome {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MiscPlacedFeatures.ICEBERG_BLUE);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MiscPlacedFeatures.ICEBERG_PACKED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShatteredPlacedFeatures.ICE_SPIKE_EVERYWHERE);
+
+        builder.feature(GenerationStep.Feature.UNDERGROUND_ORES, ShatteredPlacedFeatures.ORE_ARCTICITE);
 
         return builder.build();
     }

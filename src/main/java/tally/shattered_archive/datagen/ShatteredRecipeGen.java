@@ -17,6 +17,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.resource.featuretoggle.FeatureSet;
+import net.minecraft.util.Identifier;
 import tally.shattered_archive.blocks.ShatteredBlocks;
 import tally.shattered_archive.items.ShatteredItems;
 
@@ -72,6 +73,16 @@ public class ShatteredRecipeGen extends FabricRecipeProvider {
                 150,
                 "defrosting"
         );
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ShatteredItems.GLASS_CUTTER, 1)
+                .pattern("  1")
+                .pattern(" 2 ")
+                .pattern("3  ")
+                .input('1', ShatteredItems.ARCTICITE_SHARD)
+                .input('2', Items.IRON_NUGGET)
+                .input('3', Items.STICK)
+                .group("glass_cutter")
+                .criterion("has_arcticite_shard", RecipeProvider.conditionsFromItem(ShatteredItems.ARCTICITE_SHARD))
+                .offerTo(recipeExporter);
 
         FabricRecipeProvider.generateFamily(recipeExporter, ShatteredBlocks.ENCHANTED_WILLOW_FAMILY, FeatureSet.of(FeatureFlags.VANILLA));
         offerPlanksRecipe(recipeExporter, ShatteredBlocks.ENCHANTED_WILLOW_PLANKS, ShatteredItemTagGen.ENCHANTED_WILLOW_LOGS, 4);
@@ -109,7 +120,7 @@ public class ShatteredRecipeGen extends FabricRecipeProvider {
                 .criterion("has_basalt", conditionsFromItem(Blocks.BASALT))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ShatteredBlocks.ARCTICITE_GLASS, 8).input(Character.valueOf('#'), Blocks.BLUE_ICE).input(Character.valueOf('X'), Blocks.GLASS).pattern("###").pattern("#X#").pattern("###").group("arcticite_glass").criterion("has_blue_ice", (AdvancementCriterion) RecipeProvider.conditionsFromItem(Blocks.BLUE_ICE)).offerTo(recipeExporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ShatteredBlocks.ARCTICITE_GLASS, 8).input(Character.valueOf('#'), Blocks.GLASS).input(Character.valueOf('X'), ShatteredItems.ARCTICITE_SHARD).pattern("###").pattern("#X#").pattern("###").group("arcticite_glass").criterion("has_arcticite_shard", (AdvancementCriterion) RecipeProvider.conditionsFromItem(ShatteredItems.ARCTICITE_SHARD)).offerTo(recipeExporter);
     }
 
     public static void offerStainedArcticiteDyeingRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {
